@@ -67,7 +67,7 @@ export default function Location() {
       duration: language === "ch" ? "乘车约 7 分钟" : language === "ms" ? "7 min memandu" : "7 mins drive",
       description: t("discover.templesList.temple3Desc"),
       history: t("discover.templesList.temple3History"),
-      imageUrl: "images/WhatsApp Image 2026-05-28 at 14.51.13 (1).jpeg",
+      imageUrl: "/images/WhatsApp Image 2026-05-28 at 14.51.13 (1).jpeg",
       googleDirections: "https://maps.google.com/?q=Black+Dragon+Cave+Temple+Yong+Peng"
     }
   ];
@@ -96,7 +96,7 @@ export default function Location() {
       category: t("discover.foodList.food3Category"),
       specialty: t("discover.foodList.food3Spec"),
       description: t("discover.foodList.food3Desc"),
-      imageUrl: "images/toast.jpg"
+      imageUrl: "/images/toast.jpg"
     },
     {
       id: "food-4",
@@ -104,7 +104,7 @@ export default function Location() {
       category: t("discover.foodList.food4Category"),
       specialty: t("discover.foodList.food4Spec"),
       description: t("discover.foodList.food4Desc"),
-      imageUrl: "images/fishball.jpeg"
+      imageUrl: "/images/fishball.jpeg"
     }
   ];
 

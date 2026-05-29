@@ -195,11 +195,11 @@ export default function Home() {
         : "This master room is very spacious (400 sqft) with a large window and thick blackout curtains. It also features a dedicated vanity desk for your comfort.",
         
       images: [
-        "images/IMG-20260407-WA0023.jpg",
-        "images/IMG-20260407-WA0019.jpg",
-        "images/IMG-20260407-WA0026.jpg",
-        "images/IMG-20260407-WA0027.jpg",
-        "images/IMG-20260407-WA0025.jpg"
+        "/images/IMG-20260407-WA0023.jpg",
+        "/images/IMG-20260407-WA0019.jpg",
+        "/images/IMG-20260407-WA0026.jpg",
+        "/images/IMG-20260407-WA0027.jpg",
+        "/images/IMG-20260407-WA0025.jpg"
       ],
       amenities: language === "ch" 
         ? ["明亮大窗口", "2马力Daikin静音冷气", "精致梳妆台", "热水套房卫浴", "置有吹风机", "400方尺宽阔空间", "热水壶"] 
@@ -225,8 +225,8 @@ export default function Home() {
         : "This room features a cozy vibe with unique wallpaper design. The soft lighting and quiet environment guarantee a good night's sleep！",
         
       images: [
-        "images/IMG-20260407-WA0020.jpg",
-        "images/IMG-20260407-WA0030.jpg"
+        "/images/IMG-20260407-WA0020.jpg",
+        "/images/IMG-20260407-WA0030.jpg"
       ],
       amenities: language === "ch" 
         ? ["2马力Daikin静音冷气", "私密套房浴室", "遮光物理窗帘", "热水壶", "置有吹风机", "200方尺空间"] 
@@ -252,11 +252,11 @@ export default function Home() {
         : "This is our largest room (a whopping 620 sqft!), featuring two King beds and a beautiful ocean mural. The massive space is perfect for families or a group of friends to hang out and chat at night.",
         
       images: [
-        "images/IMG-20260407-WA0021.jpg",
-        "images/IMG-20260407-WA0022.jpg",
-        "images/IMG-20260407-WA0018.jpg",
-        "images/IMG-20260407-WA0028.jpg",
-        "images/IMG-20260407-WA0029.jpg"
+        "/images/IMG-20260407-WA0021.jpg",
+        "/images/IMG-20260407-WA0022.jpg",
+        "/images/IMG-20260407-WA0018.jpg",
+        "/images/IMG-20260407-WA0028.jpg",
+        "/images/IMG-20260407-WA0029.jpg"
       ],
       amenities: language === "ch" 
         ? ["2马力Daikin静音冷气", "两张特大双人床", "套间高压淋浴", "超多插座", "微波炉", "热水壶", "50寸大电视", "置有吹风机", "饮水机", "冰箱", "620方尺超大空间"] 
@@ -433,7 +433,7 @@ export default function Home() {
             <div className="lg:col-span-5 relative" id="hero-image-block">
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[4/3] sm:aspect-square">
                 <img
-                  src="images/IMG-20260407-WA0021.jpg"
+                  src="/images/IMG-20260407-WA0021.jpg"
                   alt="88 Homestay welcoming living space"
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"

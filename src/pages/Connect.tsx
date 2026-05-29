@@ -214,7 +214,7 @@ export default function Connect() {
             <div className="bg-white rounded-2xl border border-brand-sand-dark/60 p-6 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6" id="host-card">
               <div className="w-20 h-20 rounded-2xl overflow-hidden bg-brand-sand/30 shrink-0 relative border-2 border-brand-amber shadow-sm">
                 <img
-                  src="images/WhatsApp Image 2026-05-28 at 16.48.35.jpeg"
+                  src="/images/WhatsApp Image 2026-05-28 at 16.48.35.jpeg"
                   alt="88 Buddy Host Mascot"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -518,7 +518,7 @@ export default function Connect() {
               >
                 {/* Visual map rendering view */}
                 <img
-                  src="images/IMG_20260528_190033.jpg"
+                  src="/images/IMG_20260528_190033.jpg"
                   alt="Google Map preview for Yong Peng town center"
                   className="w-full h-full object-cover opacity-80 filter grayscale group-hover:grayscale-0 transition-all duration-300"
                 />

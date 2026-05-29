@@ -78,7 +78,7 @@ export default function Navbar() {
               
               {/* Replaced '88' text with your image */}
               <img 
-                src="images/logo_cropped.png" 
+                src="/images/logo_cropped.png" 
                 alt="88 Homestay Logo" 
                 className="w-full h-full object-cover rounded-full"
               />
