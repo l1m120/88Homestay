@@ -1,0 +1,8 @@
+{
+  "name": "88 Homestay",
+  "description": "A modern, responsive 3-page interactive website for 88 Homestay in Yong Peng, Johor, featuring a room catalog, culinary and attraction guides, and direct book links.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

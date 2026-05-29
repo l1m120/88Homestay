@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Urbanist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-brand-cream: #FDFBF7;
+  --color-brand-sand: #F3EFE9;
+  --color-brand-sand-dark: #EAE8E4;
+  --color-brand-terracotta: #92400E;
+  --color-brand-terracotta-dark: #78350F;
+  --color-brand-terracotta-light: #FDF6E2;
+  --color-brand-amber: #D97706;
+  --color-brand-amber-light: #FEF3C7;
+  --color-brand-earth: #2D241E;
+  --color-brand-charcoal: #2D241E;
+}
+
+/* Custom fade animations or helper classes if needed */
+.text-stroke {
+  -webkit-text-stroke: 1px currentColor;
+}
+
