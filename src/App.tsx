@@ -21,21 +21,6 @@ function AnimatedRoutes() {
         exit={{ opacity: 0, y: -15 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="flex-grow flex flex-col"
-        
-        // THIS IS THE ULTIMATE FIX 👇
-        // It fires the millisecond the new page physically enters the DOM
-        onAnimationStart={() => {
-          // 1. Standard window scroll
-          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-          
-          // 2. Aggressive fallback for mobile browsers and HashRouter
-          document.documentElement.scrollTo({ top: 0, behavior: "instant" });
-          document.body.scrollTo({ top: 0, behavior: "instant" });
-          
-          // 3. Absolute brute-force fallback just in case
-          document.documentElement.scrollTop = 0;
-          document.body.scrollTop = 0;
-        }}
       >
         <Routes location={location}>
           <Route path="/" element={<Home />} />

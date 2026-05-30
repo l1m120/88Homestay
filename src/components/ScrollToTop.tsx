@@ -10,27 +10,16 @@ export default function ScrollToTop() {
       window.history.scrollRestoration = "manual";
     }
 
-    // 2. Wait exactly 50ms for the new page components to finish rendering
+    // 2. THE MAGIC TIMING FIX: 
+    // Your Framer Motion fade-out takes 300ms (0.3s). 
+    // We wait exactly 350ms to jump to the top right as the new page appears!
     const timer = setTimeout(() => {
-      
-      // Attempt 1: Standard Window Scroll
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTo(0, 0);
-      document.body.scrollTo(0, 0);
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      document.documentElement.scrollTo({ top: 0, behavior: "instant" });
+      document.body.scrollTo({ top: 0, behavior: "instant" });
+    }, 350); 
 
-      // Attempt 2: Target ALL scrollable internal <div> containers
-      const allDivs = document.querySelectorAll("div");
-      allDivs.forEach((div) => {
-        // If the div's inner content is taller than the div itself, it is scrolling
-        if (div.scrollHeight > div.clientHeight) {
-          // Force it to the top
-          div.scrollTo({ top: 0, behavior: "instant" });
-          div.scrollTop = 0; // Hard fallback
-        }
-      });
-
-    }, 50); 
-
+    // Cleanup timer if the component unmounts mid-render
     return () => clearTimeout(timer);
   }, [pathname]);
 
