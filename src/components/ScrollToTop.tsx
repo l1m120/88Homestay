@@ -5,25 +5,23 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // 1. Tell the browser NOT to restore the scroll position on a page refresh
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
 
-    const handleScroll = () => {
-      // 1. Scroll the standard window object
-      window.scrollTo(0, 0);
+    // 2. Force the window to scroll back to the absolute top-left corner.
+    // We wrap it in a setTimeout to ensure it executes right after the 
+    // browser finishes rendering the updated DOM elements.
+    const timer = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant", // Forces an immediate jump without slow transition lag
+      });
+    }, 0);
 
-      // 2. Fallback: Catch any scrollable layout elements (like #root, body, or main wrappers)
-      document.documentElement.scrollTo(0, 0);
-      document.body.scrollTo(0, 0);
-      
-      const appRoot = document.getElementById("root");
-      if (appRoot) appRoot.scrollTo(0, 0);
-    };
-
-    // Use a small 10ms delay to force it after GitHub Pages finishes DOM rendering
-    const timer = setTimeout(handleScroll, 10);
-
+    // Cleanup timer if the component unmounts mid-render
     return () => clearTimeout(timer);
   }, [pathname]);
 
