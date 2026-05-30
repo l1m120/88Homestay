@@ -1,7 +1,7 @@
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { LanguageProvider } from "./context/LanguageContext";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop"; // We keep this just to block browser refresh memory
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -13,7 +13,11 @@ function AnimatedRoutes() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence 
+      mode="wait" 
+      // THIS IS THE MAGIC LINE 👇
+      onExitComplete={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}
+    >
       <motion.div
         key={location.pathname}
         initial={{ opacity: 0, y: 15 }}
@@ -38,7 +42,9 @@ export default function App() {
   return (
     <LanguageProvider>
       <Router>
-        <ScrollToTop />
+        {/* We keep this here just in case the user hits the browser Refresh button */}
+        <ScrollToTop /> 
+        
         <div className="flex flex-col min-h-screen bg-brand-cream text-brand-charcoal selection:bg-brand-amber selection:text-brand-charcoal font-sans">
           {/* Sticky Header Navigation */}
           <Navbar />
