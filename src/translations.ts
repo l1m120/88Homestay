@@ -36,7 +36,7 @@ export const translations = {
       rosewoodDesc: "Infused with warm lighting and minimalist oak furniture. Designed for supreme quietness with heavy soundproof curtains and a dedicated dressing vanity.",
       ochreName: "Bedroom 2",
       ochreBadge: "Cozy Comfort",
-      ochreDesc: "Styled in comforting earth and terracotta highlights. Includes floor-to-ceiling wooden accents, reading lamps, and a direct luggage storage rack.",
+      ochreDesc: "Styled in comforting earth and terracotta highlights. Includes floor-to-ceiling wooden accents, reading lamps.",
       twinName: "Bedroom 3",
       twinBadge: "Family/Group Favorite",
       twinDesc: "An exceptionally spacious family setup. Comfortably houses two full King-size beds with individual plush pillows. Ideal for late-night family chats.",
@@ -260,7 +260,7 @@ export const translations = {
       bathroomLabel: "独立厕所",
       viewSuite: "看房间详情",
       stairsNoticeTitle: "入住温馨提醒 (非常重要！)",
-      stairsNoticeDesc: "我们的 Homestay 在永平的店屋楼上（二楼）。需要走一段宽阔明亮的楼梯上去。如果行李很多很重需要帮忙搬，提早跟我们的管家 88 Buddy 说一声就可以了！"
+      stairsNoticeDesc: "我们的 Homestay 在永平的店屋楼上（二楼）。需要走一段宽阔明亮的楼梯上去哦！"
     },
     amenities: {
       badge: "设备齐全，包你满意",
