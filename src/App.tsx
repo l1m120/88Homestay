@@ -1,6 +1,7 @@
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { LanguageProvider } from "./context/LanguageContext";
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -37,6 +38,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-brand-cream text-brand-charcoal selection:bg-brand-amber selection:text-brand-charcoal font-sans">
           {/* Sticky Header Navigation */}
           <Navbar />
