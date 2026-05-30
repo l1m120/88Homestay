@@ -5,23 +5,32 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // 1. Tell the browser NOT to restore the scroll position on a page refresh
+    // 1. Stop the browser from trying to remember the scroll position
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
 
-    // 2. Force the window to scroll back to the absolute top-left corner.
-    // We wrap it in a setTimeout to ensure it executes right after the 
-    // browser finishes rendering the updated DOM elements.
+    // 2. Wait exactly 50ms for the new page components to finish rendering
     const timer = setTimeout(() => {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "instant", // Forces an immediate jump without slow transition lag
-      });
-    }, 0);
+      
+      // Attempt 1: Standard Window Scroll
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTo(0, 0);
+      document.body.scrollTo(0, 0);
 
-    // Cleanup timer if the component unmounts mid-render
+      // Attempt 2: Target ALL scrollable internal <div> containers
+      const allDivs = document.querySelectorAll("div");
+      allDivs.forEach((div) => {
+        // If the div's inner content is taller than the div itself, it is scrolling
+        if (div.scrollHeight > div.clientHeight) {
+          // Force it to the top
+          div.scrollTo({ top: 0, behavior: "instant" });
+          div.scrollTop = 0; // Hard fallback
+        }
+      });
+
+    }, 50); 
+
     return () => clearTimeout(timer);
   }, [pathname]);
 
