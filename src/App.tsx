@@ -32,3 +32,25 @@ function AnimatedRoutes() {
     </AnimatePresence>
   );
 }
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="flex flex-col min-h-screen bg-brand-cream text-brand-charcoal selection:bg-brand-amber selection:text-brand-charcoal font-sans">
+          {/* Sticky Header Navigation */}
+          <Navbar />
+
+          {/* Dynamic page contents with transition wrappers */}
+          <main className="flex-grow flex flex-col">
+            <AnimatedRoutes />
+          </main>
+
+          {/* Persistent bottom footer details */}
+          <Footer />
+        </div>
+      </Router>
+    </LanguageProvider>
+  );
+}
