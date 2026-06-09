@@ -91,7 +91,7 @@ export default function Connect() {
       id: "booking",
       name: "Booking.com",
       description: language === "ch" ? "支持 Genius 常客升房特权以及极其弹性的免订金退订方案" : language === "ms" ? "Ganjaran taraf kesetiaan Genius dan tatasusila pembatalan fleksibel" : "Genius loyalty discounts and flexible cancellation terms",
-      url: "https://www.booking.com",
+      url: "booking.com/hotel/my/yong-peng-3-rooms-new-homestay-near-tian-pao-kong.en-gb.html?label=gen173nr-10CAEoggI46AdIM1gEaKEBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALvlZbRBsACAdICJDNlY2FlN2I1LTcwM2UtNGYwNy1hZjUyLTllMjkxYjgzZTc1ZtgCAeACAQ&aid=304142&ucfs=1&arphpl=1&checkin=2027-02-01&checkout=2027-02-04&dest_id=-2405393&dest_type=city&group_adults=6&req_adults=6&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=127e376fee5a03ca&srepoch=1780991587&all_sr_blocks=1658563201_437763493_8_0_0&highlighted_blocks=1658563201_437763493_8_0_0&matching_block_id=1658563201_437763493_8_0_0&sr_pri_blocks=1658563201_437763493_8_0_0__99900&from=searchresults",
       colorClass: "bg-white border-brand-sand-dark/60 hover:bg-[#003580] hover:border-[#003580] hover:shadow-blue-900/15 hover:shadow-lg hover:text-white transform hover:-translate-y-0.5",
       iconColor: "text-[#003580] bg-blue-50/50 group-hover:bg-white/20 group-hover:text-white group-hover:border-transparent",
       ctaLabel: language === "ch" ? "前往 Booking.com 选择" : language === "ms" ? "Buka di Booking.com" : "Select on Booking.com",
@@ -146,7 +146,7 @@ export default function Connect() {
         : language === "ms" 
         ? "Info Yong Peng & promo homestay terkini!" 
         : "Yong Peng guides & latest homestay promos!",
-      url: "https://www.facebook.com",
+      url: "https://www.facebook.com/share/18eDAZALq8/",
       colorClass: "bg-white border-brand-sand-dark/60 hover:bg-[#1877F2] hover:border-[#1877F2] hover:shadow-blue-900/15 hover:shadow-lg hover:text-white transition-all duration-300 transform hover:-translate-y-0.5",
       iconColor: "text-[#1877F2] bg-blue-50/50 border border-blue-100 group-hover:bg-white group-hover:text-[#1877F2] group-hover:border-transparent"
     }
