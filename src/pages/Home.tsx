@@ -254,7 +254,7 @@ export default function Home() {
       images: [
         "/images/IMG-20260407-WA0021.jpg",
         "/images/IMG-20260407-WA0022.jpg",
-        "/images/room 3 amended.jpeg",
+        "/images/room 3 amended.png",
         "/images/IMG-20260407-WA0028.jpg",
         "/images/IMG-20260407-WA0029.jpg"
       ],
