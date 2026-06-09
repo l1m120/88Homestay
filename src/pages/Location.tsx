@@ -49,7 +49,7 @@ export default function Location() {
       duration: language === "ch" ? "乘车约 2 分钟" : language === "ms" ? "2 min memandu" : "2 mins drive",
       description: t("discover.templesList.temple1Desc"),
       history: t("discover.templesList.temple1History"),
-      imageUrl: "https://scontent.fmkz1-2.fna.fbcdn.net/v/t39.30808-6/627758739_1428919058872523_3144625751669473696_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=f727a1&_nc_ohc=zrie7B3LMjkQ7kNvwH_tAR_&_nc_oc=Adrhs_sKSEd2PM69YazuCiDamIzrHXEjgKxwbp7d9CiAddGu_-YtwmzzXV3ldzuNSz6SwnC027LdqCl7S8kaVYO4&_nc_zt=23&_nc_ht=scontent.fmkz1-2.fna&_nc_gid=nKLwTWCbMGnXMNQaRD2wYA&_nc_ss=7b289&oh=00_Af69A9b3KCyWiaPlHUwUQb3NMz0RPAKX8P3RISy2z-zAHA&oe=6A1DB94F",
+      imageUrl: "/images/tianpaokong.jpg",
       googleDirections: "https://share.google/o6xN9RT7Ixi6qN7Bz"
     },
     {
@@ -58,7 +58,7 @@ export default function Location() {
       duration: language === "ch" ? "乘车约 5 分钟" : language === "ms" ? "5 min memandu" : "5 mins drive",
       description: t("discover.templesList.temple2Desc"),
       history: t("discover.templesList.temple2History"),
-      imageUrl: "https://scontent.fmkz1-2.fna.fbcdn.net/v/t39.30808-6/472184656_10164390015124008_896270613997136607_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=dVtjKlZaegYQ7kNvwEQjHMU&_nc_oc=AdrFcwGhMhxgaKw-tGC51efE3VQBAtDxyX7hkfYfMYVIiGRzn_y5t8erPgMhwj24awPbQzl5N4_Nx4ng4cjVs8Ti&_nc_zt=23&_nc_ht=scontent.fmkz1-2.fna&_nc_gid=g0sEiWIbgRhnHWg4lBwxYw&_nc_ss=7b289&oh=00_Af7Cq9dgMwWu1Vjd_v-vCM6xY8iKrbULc1JaJ8w5Rknu5g&oe=6A1DACDF",
+      imageUrl: "/images/dejiaohui.jpg",
       googleDirections: "https://share.google/maEIB6UhWneaiyD90"
     },
     {
@@ -67,7 +67,7 @@ export default function Location() {
       duration: language === "ch" ? "乘车约 7 分钟" : language === "ms" ? "7 min memandu" : "7 mins drive",
       description: t("discover.templesList.temple3Desc"),
       history: t("discover.templesList.temple3History"),
-      imageUrl: "/images/WhatsApp Image 2026-05-28 at 14.51.13 (1).jpeg",
+      imageUrl: "/images/heilongdong.jpeg",
       googleDirections: "https://maps.google.com/?q=Black+Dragon+Cave+Temple+Yong+Peng"
     }
   ];
@@ -88,7 +88,7 @@ export default function Location() {
       category: t("discover.foodList.food2Category"),
       specialty: t("discover.foodList.food2Spec"),
       description: t("discover.foodList.food2Desc"),
-      imageUrl: "https://scontent.fmkz1-2.fna.fbcdn.net/v/t39.30808-6/475764738_1042331231256111_252327163368375760_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=UO7Lbx9SSs4Q7kNvwGqMv4y&_nc_oc=AdqFJiIV2ELIIq7JGR1oEYFEK7-9LeWSaeqDeKCoyWRbLcG9s5l6LTc6-Hn_L44i3LRO3rQzTkm-5IP07xFz3vSI&_nc_zt=23&_nc_ht=scontent.fmkz1-2.fna&_nc_gid=9ikVrK806qlEBa2HUuJTGg&_nc_ss=7b289&oh=00_Af7Cj4L3RFRsMaVpPbUVYrglpxrU3o79OdbMXtj_49Q9KA&oe=6A1DA251"
+      imageUrl: "/images/mianxian.jpg"
     },
     {
       id: "food-3",
