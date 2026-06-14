@@ -161,15 +161,40 @@ export default function Connect() {
     guests: "8",
     message: ""
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
+    setIsLoading(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "f02c6e3f-dae5-44e9-8b09-311d22758dda",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          dates: formData.dates,
+          guests: formData.guests,
+          message: formData.message,
+          subject: `New 88 Homestay Inquiry from ${formData.name}`,
+          from_name: "88 Homestay Web Portal"
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
         setFormData({
           name: "",
           email: "",
@@ -178,7 +203,14 @@ export default function Connect() {
           guests: "8",
           message: ""
         });
-      }, 5000);
+      } else {
+        setErrorMessage(data.message || "Failed to submit inquiry. Please check your inputs and try again.");
+      }
+    } catch (err) {
+      console.error("Web3Forms submit error:", err);
+      setErrorMessage("An unexpected network error occurred. Please try again or contact us directly on WhatsApp!");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -368,115 +400,161 @@ export default function Connect() {
                 </p>
               </div>
 
-              {/* Form markup */}
-              <form onSubmit={handleSubmit} className="space-y-4 text-left" id="contact-form">
-                <div>
-                  <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
-                    {t("connect.form.name")}
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder={t("connect.form.namePlaceholder")}
-                    className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
-                      {t("connect.form.email")}
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder={t("connect.form.emailPlaceholder")}
-                      className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans"
-                    />
+              {/* Conditionally replace form with a success message state */}
+              {isSuccess ? (
+                <div className="py-10 px-4 text-center space-y-6 flex flex-col items-center justify-center" id="form-success-container">
+                  <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center shadow-inner border border-emerald-100">
+                    <CheckCircle className="w-10 h-10" />
                   </div>
-                  <div>
-                    <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
-                      {t("connect.form.phone")}
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder={t("connect.form.phonePlaceholder")}
-                      className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans"
-                    />
+                  <div className="space-y-3">
+                    <h4 className="font-display font-bold text-xl text-brand-charcoal">
+                      {language === "ch" ? "信息发送成功！" : language === "ms" ? "Penghantaran Berjaya!" : "Message Sent Successfully!"}
+                    </h4>
+                    <p className="font-sans text-sm text-brand-charcoal/85 max-w-sm leading-relaxed mx-auto">
+                      Thank you! We will get back to you soon.
+                    </p>
+                    <p className="font-sans text-xs text-brand-charcoal/50 max-w-xs leading-normal mx-auto pt-1">
+                      {language === "ch" 
+                        ? "管家 \"88 Buddy\" 会尽快通过邮件或电话与您取得联系。" 
+                        : language === "ms" 
+                        ? "Pembantu khas \"88 Buddy\" akan menghubungi anda melalui e-mel atau telefon secepat mungkin." 
+                        : "Our helper \"88 Buddy\" will reach out shortly via email or phone."}
+                    </p>
                   </div>
+                  <button
+                    onClick={() => setIsSuccess(false)}
+                    className="mt-2 px-5 py-2.5 bg-brand-cream hover:bg-brand-sand/50 text-brand-charcoal/80 hover:text-brand-charcoal text-xs font-semibold rounded-lg border border-brand-sand-dark/40 transition-colors"
+                  >
+                    {language === "ch" ? "发送另一条信息" : language === "ms" ? "Hantar mesej baru" : "Send Another Message"}
+                  </button>
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4 text-left" id="contact-form">
                   <div>
                     <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
-                      {t("connect.form.dates")}
+                      {t("connect.form.name")}
                     </label>
                     <input
                       type="text"
-                      value={formData.dates}
-                      onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
-                      placeholder={t("connect.form.datesPlaceholder")}
+                      required
+                      name="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder={t("connect.form.namePlaceholder")}
                       className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans"
                     />
                   </div>
-                  <div>
-                    <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
-                      {t("connect.form.guests")}
-                    </label>
-                    <select
-                      value={formData.guests}
-                      onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none text-brand-charcoal font-sans"
-                    >
-                      <option value="1-4">{t("connect.form.guestsOpt1")}</option>
-                      <option value="5-8">{t("connect.form.guestsOpt2")}</option>
-                      <option value="8">{t("connect.form.guestsOpt3")}</option>
-                      <option value="11">{t("connect.form.guestsOpt4")}</option>
-                    </select>
-                  </div>
-                </div>
 
-                <div>
-                  <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
-                    {t("connect.form.message")}
-                  </label>
-                  <textarea
-                    rows={3}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder={t("connect.form.messagePlaceholder")}
-                    className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans resize-none"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[#92400E] hover:bg-brand-terracotta-dark text-white text-xs font-bold py-3 px-5 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2"
-                >
-                  <Send className="w-3.5 h-3.5 text-white" />
-                  {t("connect.form.submit")}
-                </button>
-
-                {/* Form receipt feedback */}
-                {isSubmitted && (
-                  <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs p-4 rounded-lg flex items-start gap-2 text-left">
-                    <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <p className="font-semibold">{t("connect.form.successTitle")}</p>
-                      <p className="text-[10px] text-emerald-700/80 mt-1">
-                        {t("connect.form.successDesc")}
-                      </p>
+                      <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
+                        {t("connect.form.email")}
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        name="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder={t("connect.form.emailPlaceholder")}
+                        className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
+                        {t("connect.form.phone")}
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        name="phone"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder={t("connect.form.phonePlaceholder")}
+                        className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans"
+                      />
                     </div>
                   </div>
-                )}
-              </form>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
+                        {t("connect.form.dates")}
+                      </label>
+                      <input
+                        type="text"
+                        name="dates"
+                        value={formData.dates}
+                        onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
+                        placeholder={t("connect.form.datesPlaceholder")}
+                        className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
+                        {t("connect.form.guests")}
+                      </label>
+                      <select
+                        name="guests"
+                        value={formData.guests}
+                        onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none text-brand-charcoal font-sans"
+                      >
+                        <option value="1-4">{t("connect.form.guestsOpt1")}</option>
+                        <option value="5-8">{t("connect.form.guestsOpt2")}</option>
+                        <option value="8">{t("connect.form.guestsOpt3")}</option>
+                        <option value="11">{t("connect.form.guestsOpt4")}</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-bold text-brand-charcoal uppercase tracking-wider mb-1.5">
+                      {t("connect.form.message")}
+                    </label>
+                    <textarea
+                      rows={3}
+                      name="message"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder={t("connect.form.messagePlaceholder")}
+                      className="w-full px-4 py-2.5 rounded-lg border border-brand-sand-dark/60 bg-brand-cream/20 text-xs focus:ring-1 focus:ring-brand-amber focus:outline-none placeholder-brand-charcoal/40 text-brand-charcoal font-sans resize-none"
+                    ></textarea>
+                  </div>
+
+                  {errorMessage && (
+                    <div className="bg-rose-50 border border-rose-200 text-rose-800 text-xs p-3.5 rounded-lg flex items-start gap-2 text-left">
+                      <span className="text-rose-600 shrink-0">⚠️</span>
+                      <p>{errorMessage}</p>
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className={`w-full text-white text-xs font-bold py-3 px-5 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 ${
+                      isLoading 
+                        ? "bg-amber-800/80 cursor-not-allowed opacity-90" 
+                        : "bg-[#92400E] hover:bg-brand-terracotta-dark"
+                    }`}
+                  >
+                    {isLoading ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        {language === "ch" ? "正在发送..." : language === "ms" ? "Menghantar..." : "Sending..."}
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-3.5 h-3.5 text-white" />
+                        {t("connect.form.submit")}
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
 
             {/* Google Map indicator block */}
