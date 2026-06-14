@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { useLanguage } from "../context/LanguageContext";
+import AvailabilityCalendar from "../components/AvailabilityCalendar";
 import {
   MessageSquare,
   CheckCircle,
@@ -294,6 +295,11 @@ export default function Connect() {
                 <span className="text-[10px] text-brand-amber font-bold uppercase tracking-wider bg-[#FEF3C7] px-2 py-0.5 rounded">
                   {t("connect.sectionABadge")}
                 </span>
+              </div>
+
+              {/* Live Calendar Availability Check */}
+              <div className="w-full" id="live-calendar-wrapper">
+                <AvailabilityCalendar />
               </div>
 
               <div className="space-y-3.5" id="booking-matrix-buttons">
