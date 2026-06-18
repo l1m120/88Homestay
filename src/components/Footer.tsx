@@ -91,7 +91,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-neutral-500 flex flex-col sm:flex-row items-center gap-2 justify-between">
           <div className="flex items-center gap-2">
             <ShieldAlert className="w-4 h-4 text-brand-amber/80 shrink-0" />
-            <span>Note: <strong>88 Homestay</strong> is located on Level 2 (requires walking up shoplot stairs; may not suit wheelchair access).</span>
+            <span>Note: <strong>88 Homestay</strong> is located on Level 1 (requires walking up shoplot stairs; may not suit wheelchair access).</span>
           </div>
           <span className="text-neutral-600">Yong Peng, Johor, Malaysia</span>
         </div>
