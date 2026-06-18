@@ -295,9 +295,9 @@ export default function Connect() {
               </div>
 
               {/* Live Calendar Availability Check */}
-              <div className="w-full" id="live-calendar-wrapper">
+              {/* <div className="w-full" id="live-calendar-wrapper">
                 <AvailabilityCalendar />
-              </div>
+              </div> */}
 
               <div className="space-y-3.5" id="booking-matrix-buttons">
                 {bookingChannels.map((channel) => (
