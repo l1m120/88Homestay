@@ -58,16 +58,16 @@ export default function Connect() {
 
   // Booking channels with localized descriptions and labels
   const bookingChannels = [
-    {
-      id: "whatsapp",
-      name: language === "ch" ? "WhatsApp 预订 (88 Buddy)" : language === "ms" ? "Daftar Tempah WhatsApp (88 Buddy)" : "WhatsApp Booking (88 Buddy)",
-      description: language === "ch" ? "保证官方底价！无中介平台手续费（可替您省下高达 15%）" : language === "ms" ? "Jaminan Harga Rendah Peribadi! Muat jimat komisen agensi sehingga 15%" : "Best Price Guarantee! Save on agency commissions (Save up to 15%)",
-      url: "https://wa.me/60103219588",
-      colorClass: "bg-white border-brand-sand-dark/60 hover:bg-[#25D366] hover:border-[#25D366] hover:shadow-emerald-900/15 hover:shadow-lg hover:text-white transform hover:-translate-y-0.5",
-      iconColor: "text-[#25D366] bg-emerald-50/50 group-hover:bg-white/20 group-hover:text-white group-hover:border-transparent",
-      ctaLabel: language === "ch" ? "直接预订" : language === "ms" ? "WhatsApp Segera" : "Chat to Book Instantly",
-      isPremium: true
-    },
+    // {
+    //   id: "whatsapp",
+    //   name: language === "ch" ? "WhatsApp 预订 (88 Buddy)" : language === "ms" ? "Daftar Tempah WhatsApp (88 Buddy)" : "WhatsApp Booking (88 Buddy)",
+    //   description: language === "ch" ? "保证官方底价！无中介平台手续费（可替您省下高达 15%）" : language === "ms" ? "Jaminan Harga Rendah Peribadi! Muat jimat komisen agensi sehingga 15%" : "Best Price Guarantee! Save on agency commissions (Save up to 15%)",
+    //   url: "https://wa.me/60103219588",
+    //   colorClass: "bg-white border-brand-sand-dark/60 hover:bg-[#25D366] hover:border-[#25D366] hover:shadow-emerald-900/15 hover:shadow-lg hover:text-white transform hover:-translate-y-0.5",
+    //   iconColor: "text-[#25D366] bg-emerald-50/50 group-hover:bg-white/20 group-hover:text-white group-hover:border-transparent",
+    //   ctaLabel: language === "ch" ? "直接预订" : language === "ms" ? "WhatsApp Segera" : "Chat to Book Instantly",
+    //   isPremium: true
+    // },
     {
       id: "airbnb",
       name: "Airbnb",
@@ -292,9 +292,6 @@ export default function Connect() {
                     {t("connect.sectionA")}
                   </h2>
                 </div>
-                <span className="text-[10px] text-brand-amber font-bold uppercase tracking-wider bg-[#FEF3C7] px-2 py-0.5 rounded">
-                  {t("connect.sectionABadge")}
-                </span>
               </div>
 
               {/* Live Calendar Availability Check */}
