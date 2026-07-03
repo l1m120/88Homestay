@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import Location from "./pages/Location";
 import Connect from "./pages/Connect";
 
-// Animated wrap module to support elegant fade-and-slide page transitions
 function AnimatedRoutes() {
   const location = useLocation();
 
