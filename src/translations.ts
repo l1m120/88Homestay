@@ -378,7 +378,7 @@ export const translations = {
     connect: {
       badge: "联络我们 & 订房",
       title: "官方 Direct Booking",
-      subtitle: "直接跟我们订，不用经过 Agent！！",
+      subtitle: "通过平台预订，享有超额折扣！！",
       hostTitle: "认识一下老板: 88 Buddy",
       hostRole: "Homestay 主理人 & 你的永平私人管家",
       hostLanguages: "英文 • 华语 • 马来语",
