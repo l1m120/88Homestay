@@ -197,6 +197,7 @@ export default function Home() {
       images: [
         "/images/IMG-20260407-WA0023.jpg",
         "/images/IMG-20260407-WA0019.jpg",
+        "/images/fnb.jpg",
         "/images/IMG-20260407-WA0026.jpg",
         "/images/IMG-20260407-WA0027.jpg",
         "/images/IMG-20260407-WA0025.jpg"
