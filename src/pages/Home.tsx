@@ -422,7 +422,7 @@ export default function Home() {
                 </Link>
                 
                 <Link
-                   to="/location"
+                  to="/discover-yong-peng"
                   className="w-full sm:w-auto bg-white hover:bg-brand-sand/30 text-brand-charcoal border border-brand-sand-dark font-sans font-semibold text-sm px-6 py-3.5 rounded-xl transition-all duration-300 text-center flex items-center justify-center gap-2"
                 >
                   {t("hero.ctaSecondary")}

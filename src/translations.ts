@@ -24,7 +24,7 @@ export const translations = {
         checkout: "12:00 PM",
         checkoutSub: "Late Checkout"
       },
-      ctaPrimary: "Book Instant WhatsApp",
+      ctaPrimary: "Book Instantly!",
       ctaSecondary: "Discover Yong Peng"
     },
     rooms: {
@@ -239,7 +239,7 @@ export const translations = {
         checkout: "中午 12:00",
         checkoutSub: "延迟退房礼遇"
       },
-      ctaPrimary: "WhatsApp 快速预订",
+      ctaPrimary: "快速预订",
       ctaSecondary: "探索永平美景"
     },
     rooms: {
@@ -454,7 +454,7 @@ export const translations = {
         checkout: "12:00 Tengah Hari",
         checkoutSub: "Boleh Late Checkout"
       },
-      ctaPrimary: "Book Sekarang via WhatsApp",
+      ctaPrimary: "Book Sekarang！",
       ctaSecondary: "Tengok Tempat Best Kat Yong Peng"
     },
     rooms: {
