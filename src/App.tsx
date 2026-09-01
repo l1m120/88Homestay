@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -7,6 +8,36 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Location from "./pages/Location";
 import Connect from "./pages/Connect";
+
+// Ensures the favicon icon stays active even across GitHub Pages SPA history replacements & refreshes
+function FaviconEnforcer() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const faviconHref = "/logo_cropped.png";
+
+    // Standard Favicon
+    let link: HTMLLinkElement | null = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.type = "image/png";
+    link.href = faviconHref;
+
+    // Apple touch icon
+    let appleLink: HTMLLinkElement | null = document.querySelector("link[rel='apple-touch-icon']");
+    if (!appleLink) {
+      appleLink = document.createElement("link");
+      appleLink.rel = "apple-touch-icon";
+      document.head.appendChild(appleLink);
+    }
+    appleLink.href = faviconHref;
+  }, [location.pathname]);
+
+  return null;
+}
 
 // Animated wrap module to support elegant fade-and-slide page transitions
 function AnimatedRoutes() {
@@ -39,6 +70,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <Router>
+        <FaviconEnforcer />
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-brand-cream text-brand-charcoal selection:bg-brand-amber selection:text-brand-charcoal font-sans">
           {/* Sticky Header Navigation */}
