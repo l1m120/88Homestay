@@ -64,7 +64,7 @@ function BedroomCard({ room, t }: { room: any; t: any; key?: any }) {
       className="bg-brand-cream/40 rounded-2xl border border-brand-sand-dark/60 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group/card"
     >
       {/* Room Image Frame */}
-      <div className="relative aspect-[3/2] overflow-hidden bg-brand-sand/30 group/carousel">
+      <div className="relative aspect-[3/2] min-h-[240px] overflow-hidden bg-gray-100 flex items-center justify-center group/carousel">
         <motion.img
           key={currentIdx}
           src={room.images[currentIdx]}
@@ -72,7 +72,7 @@ function BedroomCard({ room, t }: { room: any; t: any; key?: any }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           referrerPolicy="no-referrer"
         />
 
