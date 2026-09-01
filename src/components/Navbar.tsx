@@ -44,7 +44,7 @@ export default function Navbar() {
 
   const navLinks = [
     { namePath: "nav.space", path: "/", icon: HomeIcon },
-    { namePath: "nav.discover", path: "/location", icon: MapPin },
+    { namePath: "nav.discover", path: "/discover-yong-peng", icon: MapPin },
     { namePath: "nav.connect", path: "/connect", icon: MessageSquare },
   ];
 

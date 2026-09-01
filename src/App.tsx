@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { LanguageProvider } from "./context/LanguageContext";
 import ScrollToTop from "./components/ScrollToTop"; // We keep this just to block browser refresh memory
@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Location from "./pages/Location";
 import Connect from "./pages/Connect";
 
+// Animated wrap module to support elegant fade-and-slide page transitions
 function AnimatedRoutes() {
   const location = useLocation();
 
@@ -23,9 +24,11 @@ function AnimatedRoutes() {
       >
         <Routes location={location}>
           <Route path="/" element={<Home />} />
-          <Route path="/location" element={<Location />} />
+          <Route path="/discover-yong-peng" element={<Location />} />
           <Route path="/connect" element={<Connect />} />
-          <Route path="*" element={<Home />} />
+          {/* Backward compatibility redirect */}
+          <Route path="/location" element={<Navigate to="/discover-yong-peng" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
