@@ -49,7 +49,7 @@ export default function Location() {
       duration: language === "ch" ? "乘车约 2 分钟" : language === "ms" ? "2 min memandu" : "2 mins drive",
       description: t("discover.templesList.temple1Desc"),
       history: t("discover.templesList.temple1History"),
-      imageUrl: "/images/tianpaokong.jpg",
+      imageUrl: "/images/tianpaokong.jpeg",
       googleDirections: "https://share.google/o6xN9RT7Ixi6qN7Bz"
     },
     {
@@ -58,7 +58,7 @@ export default function Location() {
       duration: language === "ch" ? "乘车约 5 分钟" : language === "ms" ? "5 min memandu" : "5 mins drive",
       description: t("discover.templesList.temple2Desc"),
       history: t("discover.templesList.temple2History"),
-      imageUrl: "/images/dejiaohui.jpg",
+      imageUrl: "/images/dejiaohui.jpeg",
       googleDirections: "https://share.google/maEIB6UhWneaiyD90"
     },
     {
