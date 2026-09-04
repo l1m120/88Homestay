@@ -226,6 +226,7 @@ export default function Home() {
         
       images: [
         "/images/WhatsApp Image 2026-09-04 at 11.48.04.jpeg",
+        "/images/room2furniture.jpg",
         "/images/IMG-20260407-WA0030.jpg"
       ],
       amenities: language === "ch" 
