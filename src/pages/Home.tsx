@@ -253,9 +253,9 @@ export default function Home() {
         : "This is our largest room (a whopping 620 sqft!), featuring two King beds and a beautiful ocean mural. The massive space is perfect for families or a group of friends to hang out and chat at night.",
         
       images: [
-        "/images/IMG-20260407-WA0021.jpg",
-        "/images/IMG-20260407-WA0022.jpg",
-        "/images/room 3 amended.jpg",
+        "/images/WhatsApp Image 2026-09-04 at 13.39.47 (1).jpeg",
+        "/images/WhatsApp Image 2026-09-04 at 13.39.47.jpeg",
+        "/images/WhatsApp Image 2026-09-04 at 13.39.47 (2).jpeg",
         "/images/fnb.jpg",
         "/images/IMG-20260407-WA0028.jpg",
         "/images/IMG-20260407-WA0029.jpg"
