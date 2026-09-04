@@ -202,10 +202,10 @@ export default function Home() {
         "/images/IMG-20260407-WA0025.jpg"
       ],
       amenities: language === "ch" 
-        ? ["明亮大窗口", "2马力Daikin静音冷气", "精致梳妆台", "热水套房卫浴", "置有吹风机", "400方尺宽阔空间", "热水壶"] 
+        ? ["明亮大窗口", "遮光物理窗帘", "2马力Daikin静音冷气", "精致梳妆台", "热水套房卫浴", "置有吹风机", "400方尺宽阔空间", "热水壶"] 
         : language === "ms" 
-        ? ["Pendingin Hawa 2HP Daikin", "Meja Solek", "Shower Bilik Mandi", "Pengering Rambut", "Tingkap Besar", "Ruang Luas 400 sqft", "Cerek Elektrik"] 
-        : ["2HP Daikin Cassette Air-con", "Vanity Desk", "Ensuite Bathroom", "Hairdryer included", "Large Window", "400 sqft Spacious Room", "Electric Kettle"]
+        ? ["Pendingin Hawa 2HP Daikin", "Meja Solek", "Shower Bilik Mandi", "Pengering Rambut", "Tingkap Besar",  "Langsir Blackout", "Ruang Luas 400 sqft", "Cerek Elektrik"] 
+        : ["2HP Daikin Cassette Air-con", "Vanity Desk", "Ensuite Bathroom", "Hairdryer included", "Large Window","Blackout Curtains", "400 sqft Spacious Room", "Electric Kettle"]
     },
     {
       id: "bed-2",
@@ -230,10 +230,10 @@ export default function Home() {
         "/images/IMG-20260407-WA0030.jpg"
       ],
       amenities: language === "ch" 
-        ? ["2马力Daikin静音冷气", "私密套房浴室", "遮光物理窗帘", "热水壶", "置有吹风机", "200方尺空间"] 
+        ? ["2马力Daikin静音冷气", "私密套房浴室" , "热水壶", "置有吹风机", "200方尺空间"] 
         : language === "ms" 
-        ? ["Penghawa Dingin 2HP Daikin", "Bilik Mandi Sendiri", "Langsir Blackout", "Cerek Elektrik", "Pengering Rambut", "Ruang 200 sqft"] 
-        : ["2HP Daikin Cassette Air-con", "Ensuite Bathroom", "Blackout Curtains", "Electric Kettle", "Hair Dryer", "200 sqft Space"]
+        ? ["Penghawa Dingin 2HP Daikin", "Bilik Mandi Sendiri", "Cerek Elektrik", "Pengering Rambut", "Ruang 200 sqft"] 
+        : ["2HP Daikin Cassette Air-con", "Ensuite Bathroom", "Electric Kettle", "Hair Dryer", "200 sqft Space"]
     },
     {
       id: "bed-3",
