@@ -435,7 +435,7 @@ export default function Home() {
             <div className="lg:col-span-5 relative" id="hero-image-block">
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[4/3] sm:aspect-square">
                 <img
-                  src="/images/IMG-20260407-WA0021.jpg"
+                  src="/images/WhatsApp Image 2026-09-04 at 13.39.47 (1).jpeg"
                   alt="88 Homestay welcoming living space"
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
