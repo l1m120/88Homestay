@@ -195,9 +195,8 @@ export default function Home() {
         : "This master room is very spacious (400 sqft) with a large window and thick blackout curtains. It also features a dedicated vanity desk for your comfort.",
         
       images: [
-        "/images/IMG-20260407-WA0023.jpg",
+        "/images/WhatsApp Image 2026-09-04 at 11.48.04 (1).jpeg",
         "/images/IMG-20260407-WA0019.jpg",
-        "/images/fnb.jpg",
         "/images/IMG-20260407-WA0026.jpg",
         "/images/IMG-20260407-WA0027.jpg",
         "/images/IMG-20260407-WA0025.jpg"
@@ -226,7 +225,7 @@ export default function Home() {
         : "This room features a cozy vibe with unique wallpaper design. The soft lighting and quiet environment guarantee a good night's sleep！",
         
       images: [
-        "/images/IMG-20260407-WA0020.jpg",
+        "/images/WhatsApp Image 2026-09-04 at 11.48.04.jpeg",
         "/images/IMG-20260407-WA0030.jpg"
       ],
       amenities: language === "ch" 
@@ -256,6 +255,7 @@ export default function Home() {
         "/images/IMG-20260407-WA0021.jpg",
         "/images/IMG-20260407-WA0022.jpg",
         "/images/room 3 amended.jpg",
+        "/images/fnb.jpg",
         "/images/IMG-20260407-WA0028.jpg",
         "/images/IMG-20260407-WA0029.jpg"
       ],
