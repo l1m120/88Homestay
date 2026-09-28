@@ -68,12 +68,12 @@ export default function Footer() {
                   57A, Jalan Persiaran Cahaya Baru, Taman BCB, 83700 Yong Peng, Johor Darul Takzim
                 </span>
               </li>
-              <li className="flex items-center gap-3">
+              {/* <li className="flex items-center gap-3">
                 <Phone className="w-4.5 h-4.5 text-brand-terracotta shrink-0" />
                 <a href="https://wa.me/60103219588" className="text-neutral-400 hover:text-brand-amber transition-colors">
                   +60 10-321 9588 (88 Buddy)
                 </a>
-              </li>
+              </li> */}
               <li className="flex items-center gap-3">
                 <Mail className="w-4.5 h-4.5 text-brand-terracotta shrink-0" />
                 <a href="mailto:yp88homestay@gmail.com" className="text-neutral-400 hover:text-brand-amber transition-colors break-all">
